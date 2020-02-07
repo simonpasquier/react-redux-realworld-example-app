@@ -9,6 +9,7 @@ jobs:
     steps:
     - checkout
     - setup_remote_docker
+    - run: docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD quay.io
     - run: docker build -t quay.io/simonpasquier/react-redux-realworld-example-app:latest .
     - run: docker push quay.io/simonpasquier/react-redux-realworld-example-app:latest
 
